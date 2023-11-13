@@ -1,4 +1,4 @@
-from colorama import Fore, Style, init # Colorama for color and style
+from colorama import Fore, Style, init  # Colorama for color and style
 
 init(autoreset=True)
 
@@ -16,7 +16,7 @@ questions = [
         "options": ["Your own reflection", "A shadow"],
         "answer": 1
     },
-     {
+    {
         "question": "What did you find in the old book?",
         "options": ["A forgotten spell", "Blank pages"],
         "answer": 0
@@ -43,6 +43,7 @@ questions = [
     }
 ]
 
+
 def present_story():
     """
     Story intro
@@ -55,18 +56,21 @@ def present_story():
     """
     print(story)
     intro_text = """
-    You find yourself in an old, decrepit mansion on a stormy night. 
-    The air is thick with an eerie fog, and the only light comes from flickering candles lining the walls.
-    Strange sounds echo through the empty halls, and you can't shake the feeling of being watched.
+    You find yourself in an old, decrepit mansion on a stormy night.
+    The air is thick with an eerie fog,
+    and the only light comes from flickering candles lining the walls.
+    Strange sounds echo through the empty halls,
+    and you can't shake the feeling of being watched.
 
     As you explore further, you come across an ancient book with a forgotten spell.
-    As you read the incantation aloud, the room changes, 
-    and you realize you've awakened something supernatural. 
-    The spirits of the mansion are now restless, 
-    and you must navigate through the haunted rooms, 
+    As you read the incantation aloud, the room changes,
+    and you realize you've awakened something supernatural.
+    The spirits of the mansion are now restless,
+    and you must navigate through the haunted rooms,
     making decisions that will either lead to your escape or draw the paranormal closer.
 
-    Beware, every choice you make affects the outcome. Do you have the courage to face the shadows and uncover 
+    Beware, every choice you make affects the outcome.
+    Do you have the courage to face the shadows and uncover
     the mysteries hidden within?
 
     Now, brace yourself, and let the whispers guide you through the shadows...
@@ -82,32 +86,37 @@ def play_game(questions):
     for q in questions:
         print(q["question"])
 
-
         for i, option in enumerate(q["options"]):
             print(f"{i + 1}. {option}")
 
         while True:
             user_input = input("Your choice: ")
-            if user_input.strip() and user_input.strip() in ['1', '2']: # Check if the input is not empty
+            # Check if the input is not empty
+            if user_input.strip() and user_input.strip() in ['1', '2']:
                 break
             else:
                 print("Invalid input. Please enter 1 or 2.")
 
         answer = q["answer"] + 1
         if answer == int(user_input):
-            print(Fore.GREEN + "Correct answer!\n" + Style.RESET_ALL) # Green color for correct answer
+            # Green color for correct answer
+            print(Fore.GREEN + "Correct answer!\n" + Style.RESET_ALL)
             score += 1
-            wrong_answer =0 # Reset the wrong answer counter on a correct answer
+            # Reset the wrong answer counter on a correct answer
+            wrong_answer = 0
         else:
-            print(Fore.RED + "Wrong answer. The ghost gets closer...\n" + Style.RESET_ALL) # Red color for wrong answer
+            # Red color for wrong answer
+            print(Fore.RED + "The ghost gets closer..\n" + Style.RESET_ALL)
             wrong_answer += 1
 
         if wrong_answer == 3:
-            print(Fore.RED + "The Ghost caught you GAME OVER!.\n" + Style.RESET_ALL)
-            return # Exit the function and the game
+            print(Fore.RED + "The Ghost caught you!.\n" + Style.RESET_ALL)
+            # Exit the function and the game
+            return
 
-    print(Fore.GREEN + "You got away from the ghost! Congrats!\n" + Style.RESET_ALL)
+    print(Fore.GREEN + "You got away!\n" + Style.RESET_ALL)
     print(f"The game is over. Your score: {score}/{len(questions)}")
+
 
 if __name__ == "__main__":
     """
@@ -122,14 +131,11 @@ if __name__ == "__main__":
             play_again = input("Do you want to play again? (yes/no): ").lower()
             if play_again == 'no':
                 print("Thanks for playing my game. Goodbye!")
-                break  # Exit the game loop if the player chooses not to play again
+                # Exit the game loop if the player chooses not to play again
+                break
             elif play_again == 'yes':
                 print("Let's play again!")
             else:
                 print("Invalid input. Please enter 'yes' or 'no'.")
-
-        
-
-
 
     main()
