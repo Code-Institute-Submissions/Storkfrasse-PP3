@@ -77,19 +77,36 @@ def present_story():
 
 def play_game(questions):
     score = 0
+    wrong_answer = 0
+
     for q in questions:
         print(q["question"])
+
+
         for i, option in enumerate(q["options"]):
             print(f"{i + 1}. {option}")
 
-        
+        while True:
+            user_input = input("Your choice: ")
+            if user_input.strip() and user_input.strip() in ['1', '2']: # Check if the input is not empty
+                break
+            else:
+                print("Invalid input. Please enter 1 or 2.")
 
-        answer = int(input("Your choice: ")) - 1
-        if answer == q["answer"]:
+        answer = q["answer"] + 1
+        if answer == int(user_input):
             print(Fore.GREEN + "Correct answer!\n" + Style.RESET_ALL) # Green color for correct answer
             score += 1
+            wrong_answer =0 # Reset the wrong answer counter on a correct answer
         else:
             print(Fore.RED + "Wrong answer. The ghost gets closer...\n" + Style.RESET_ALL) # Red color for wrong answer
+            wrong_answer += 1
+
+        if wrong_answer == 3:
+            print(Fore.RED + "The Ghost caught you GAME OVER!.\n" + Style.RESET_ALL)
+            return # Exit the function and the game
+
+    print(Fore.GREEN + "You got away from the ghost! Congrats!\n" + Style.RESET_ALL)
     print(f"The game is over. Your score: {score}/{len(questions)}")
 
 if __name__ == "__main__":
@@ -103,9 +120,16 @@ if __name__ == "__main__":
             play_game(questions)
 
             play_again = input("Do you want to play again? (yes/no): ").lower()
-            if play_again in ['yes', 'no']:
-                break
+            if play_again == 'no':
+                print("Thanks for playing my game. Goodbye!")
+                break  # Exit the game loop if the player chooses not to play again
+            elif play_again == 'yes':
+                print("Let's play again!")
             else:
                 print("Invalid input. Please enter 'yes' or 'no'.")
+
+        
+
+
 
     main()
