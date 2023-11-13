@@ -1,4 +1,4 @@
-from colorama import Fore, Style, init
+from colorama import Fore, Style, init # Colorama for color and style
 
 init(autoreset=True)
 
@@ -81,6 +81,9 @@ def play_game(questions):
         print(q["question"])
         for i, option in enumerate(q["options"]):
             print(f"{i + 1}. {option}")
+
+        
+
         answer = int(input("Your choice: ")) - 1
         if answer == q["answer"]:
             print(Fore.GREEN + "Correct answer!\n" + Style.RESET_ALL) # Green color for correct answer
@@ -95,6 +98,14 @@ if __name__ == "__main__":
     """
     def main():
         present_story()
-        play_game(questions)
+
+        while True:
+            play_game(questions)
+
+            play_again = input("Do you want to play again? (yes/no): ").lower()
+            if play_again in ['yes', 'no']:
+                break
+            else:
+                print("Invalid input. Please enter 'yes' or 'no'.")
 
     main()
