@@ -10,6 +10,7 @@ Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_bl
 - [Contents](#contents)
 - [User Experience](#user-experience)
   - [User Stories](#user-stories)
+  - [Flow Chart](#flow-chart)
   - [Site Structure](#site-structure)
   - [Design Choices](#design-choices)
 - [Features](#features)
@@ -33,6 +34,12 @@ Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_bl
 * As a user, I want to be able to read the rules.
 * As a user, I want to play the game.
 * As a user, I want to be able to restart the game or quit.
+
+[Back to top](#contents)
+
+## Flow chart
+
+![Flow chart](assets/readme-image/flwochart.jpg)
 
 [Back to top](#contents)
 
