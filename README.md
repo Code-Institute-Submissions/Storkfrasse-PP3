@@ -85,9 +85,61 @@ The idea of this website is to show a different kind of game, a little of an old
 
 # Testing
 
-Please refer to [**_here_**](TESTING.md) for the testing results.
 
-[Back to top](#contents)
+## Code Validation
+
+Whispers in the Shadows program has be tested. All the code has been run through the [CI Python Linter](https://pep8ci.herokuapp.com/#)
+
+The Ci Python Linter results for the program is below:
+
+* Whispers in the shadows
+
+![CI Python Linter](assets/testing-image/pep8ok.jpg)
+
+
+
+## Browser Compatibility
+
+This program was tested on the following browsers.
+Google Chrome, Microsoft Edge and Mozilla Firefox. Appearance and functionality  were consistent.
+
+## Testing User Stories
+
+* As a user, I want to be able to start the game.
+  * There is a option to start the game.
+    <br>
+* As a user, I want to be able to read the rules.
+  * There is a option to read the rules.
+    <br>
+* As a user, I want to se if my answers are right or wrong.
+  * As a player you get the color green for right and color red for wrong.
+    <br>    
+* As a user, I want to be able to restart the game or quit.
+  * When the game is over you have the option to restart or quit.
+
+## Known Bugs
+
+* During the build. I hade two bugs one where a loop was broken and what ever you answer was wrong.<br> The other was the lines in the story were to long:<br>
+    1.
+    ![Broken Loop](assets/testing-image/loopbroke.jpg)<br>
+    2.<br>
+    ![Long lines](assets/testing-image/errors.jpg)
+
+* ### Resolved
+
+  * Whit the broken loop i hade forgotten a letter, when i put it in all worked fine.
+
+  * With the lines. I checked the spelling and sorted out so the line get over 79.
+
+
+## Additional Testing
+
+  * There were minor spelling and grammar errors that have since been fixed.
+
+  * I did a color test so i could see that the color were put on the right answer.
+  ![Color test](assets/testing-image/colorcheck.jpg)
+
+
 
 # Deployment
 
