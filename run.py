@@ -87,7 +87,7 @@ def display_rules():
     print("- Make choices to navigate through the haunted rooms.")
     print("- Every choice affect the outcome.")
     print("- Get the correct answer to escape the paranormal.")
-    print("- Three wrong ansers, and the ghost catches you!\n")
+    
 
 
 def play_game(questions):
