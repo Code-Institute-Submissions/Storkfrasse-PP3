@@ -48,10 +48,10 @@ def present_story():
     """
     Story intro
     """
-    border = "+" + "=" * 110 + "+"
+    border = "+" + "=" * 50 + "+"
     story = f"""
     {Fore.YELLOW}{border}{Style.RESET_ALL}
-    {Fore.RED}|{'Whispers in the Shadows':^110}|{Style.RESET_ALL}
+    {Fore.RED}|{'Whispers in the Shadows':^50}|{Style.RESET_ALL}
     {Fore.YELLOW}{border}{Style.RESET_ALL}
     """
     print(story)
@@ -62,12 +62,14 @@ def present_story():
     Strange sounds echo through the empty halls,
     and you can't shake the feeling of being watched.
 
-    As you explore further, you come across an ancient book with a forgotten spell.
+    As you explore further, you come across an ancient book with
+    a forgotten spell.
     As you read the incantation aloud, the room changes,
     and you realize you've awakened something supernatural.
     The spirits of the mansion are now restless,
     and you must navigate through the haunted rooms,
-    making decisions that will either lead to your escape or draw the paranormal closer.
+    making decisions that will either lead to your escape or
+    draw the paranormal closer.
 
     Beware, every choice you make affects the outcome.
     Do you have the courage to face the shadows and uncover
