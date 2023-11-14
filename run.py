@@ -79,6 +79,15 @@ def present_story():
     print(f"{Fore.YELLOW}{border}{Style.RESET_ALL}")
 
 
+def display_rules():
+    print("\nRules:")
+    print("- You find your self in a haunted mansion.")
+    print("- Make choices to navigate through the haunted rooms.")
+    print("- Every choice affect the outcome.")
+    print("- Get the correct answer to escape the paranormal.")
+    print("- Three wrong ansers, and the ghost catches you!\n")
+
+
 def play_game(questions):
     score = 0
     wrong_answer = 0
@@ -126,16 +135,20 @@ if __name__ == "__main__":
         present_story()
 
         while True:
-            play_game(questions)
+            print("1. Start Game")
+            print("2. Read Rules")
+            print("3. Quit")
 
-            play_again = input("Do you want to play again? (yes/no): ").lower()
-            if play_again == 'no':
+            choice = input("Enter your choice:")
+
+            if choice == '1':
+                play_game(questions)
+            elif choice == '2':
+                display_rules()
+            elif choice == '3':
                 print("Thanks for playing my game. Goodbye!")
-                # Exit the game loop if the player chooses not to play again
                 break
-            elif play_again == 'yes':
-                print("Let's play again!")
             else:
-                print("Invalid input. Please enter 'yes' or 'no'.")
+                print("Invalid choice. Please enter 1, 2, or 3.")
 
     main()
