@@ -1,13 +1,12 @@
 # **Whispers in the Shadows**
 
-Whispers in the Shadows is a text based adventure game in python.
+Whispers in the Shadows is a text-based adventure game in Python.
 
 Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_blank" rel="noopener">Whispers in the Shadows</a>
 
-
 # Contents
 
-- [**Whispers in the Shadows**](#Rock Paper Scissors)
+- [**Whispers in the Shadows**](#Rock-Paper-Scissors)  <!-- Fixed anchor link -->
 - [Contents](#contents)
 - [User Experience](#user-experience)
   - [User Stories](#user-stories)
@@ -24,133 +23,113 @@ Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_bl
     - [**To create a local clone of this project**](#to-create-a-local-clone-of-this-project)
 - [Credits](#credits)
     - [Content](#content)
-    - [Media](#media)
 - [Acknowledgements](#acknowledgements)
-
 
 # User Experience
 
 ## User Stories
 
-* As a user I want to be able to read the rules.
-* As a user I want to play the game.
-* As a user I want to know won the round.
-* As a user I want to see and reset the score.
+* As a user, I want to be able to start the game.
+* As a user, I want to be able to read the rules.
+* As a user, I want to play the game.
+* As a user, I want to be able to restart the game or quit.
 
-[Back to top](<#contents>)
-
+[Back to top](#contents)
 
 ## Site Structure
 
-Whispers in the Shadows is a single working python program.
+Whispers in the Shadows is a single working Python program.
 
+[Back to top](#contents)
 
-[Back to top](<#contents>)
 ## Design Choices
 
  * ### Typography
-      The fonts chosen were 'Lilita One' for the headings and 'Hachi Maru pop' for the body text.  
-      * 'Lilita One' was chosen for the headings because i thought i was more fitting as a heading font
-      * 'Hachi Maru pop' is used for the rules text and score text (body).
+      Whispers in the Shadows has a simple DOS-looking design.
+      * I used green color for the right answer.
+      * I used red color for the wrong answer and the heading for the program name.
+      * I used yellow color for the border.
 
- * ### Color Scheme
-      I used Antique white and whit mainly so the users eye won't work to hard. the Celestial Blue is for future features. 
- ![Color scheme](assets/readme-image/dropdownnavbar.jpg)
+[Back to top](#contents)
 
-
-
-[Back to top](<#contents>)
 # Features
 
-	The idea of this website is to people to make a stop and just enjoy them self with an easy and funny game. 
+The idea of this website is to show a different kind of game, a little of an old-school game.
 
 ## Existing Features  
- *## Rock, Paper Scissors.
+ *## Whisper in the Shadows.
 
+![Navigation bar image](assets/readme-image/whispers.jpg)
 
-
-![Navigation bar image](assets/readme-image/dropdownnavbar.jpg)
-
- 
-[Back to top](<#contents>)
-
+[Back to top](#contents)
 
 ## Future Features 
 
-* I would like to make another game.
+* Build a website so this game gets more design to it.
 
-[Back to top](<#contents>)
+[Back to top](#contents)
 
 # Technologies Used
-* [JavaScript](https://https://www.w3schools.com/whatis/whatis_js.asp) - provides the function for the site.
-* [HTML5](https://html.spec.whatwg.org/) - provides the content and structure for the website.
-* [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - provides the styling.
-* [Github](https://github.com/) - used to host my website.
-* [Codeanywhere](https://app.codeanywhere.com) - used to build and edit my website.
+* [Python](https://www.python.org/) - provides the function for the site.
+* [GitHub](https://github.com/) - used to host my website.
+* [Codeanywhere](https://app.codeanywhere.com) - used to build and edit the program.
 
-[Back to top](<#contents>)
+[Back to top](#contents)
 
 # Testing
 
 Please refer to [**_here_**](TESTING.md) for the testing results.
 
-[Back to top](<#contents>)
+[Back to top](#contents)
 
 # Deployment
 
 ### **To deploy the project**
-The site was deployed to GitHub pages. The steps to deploy a site are as follows:
-  1. In the GitHub repository, navigate to the **Settings** tab.
-  2. Once in Settings, navigate to the **Pages** tab on the left hand side.
-  3. Under **Source**, select the branch to **main**, then click **save**.
-  4. Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+The site was deployed to Heroku pages. The steps to deploy a site are as follows:
+  1. On the Heroku page, click on **New**, then create a new app.
+  ![Heroku page create new app](assets/readme-image/createnew.jpg)<br>
+  2. Then a new window will pop up. Create a name for the deployment, and change location (Europe in my case).<br>
+  ![Heroku New app](assets/readme-image/setupname.jpg)<br>
+  3. Then click **Create app**.
+  4. Once it's created, you will be sent to the page for deployment.
+  5. In the deployment page, you will go to **Settings**.
+  6. Once in Settings, you will need to add Vars (If you need.). Then you need to **Add buildpack** and add Heroku/python and Heroku/nodejs.<br>
+  ![Heroku settings](assets/readme-image/settings.jpg)<br>
+  7. Back to deployment. You want to use deployment method **GitHub** and connect to your repository. And search for your project.
+  8. At last, you can use manual deploy and click **Deploy Branch**.<br>
+  ![GitHub pages deployed image](assets/readme-image/deploy.jpg)
 
-![GitHub pages deployed image](assets/readme-image/deploy.jpg)
-
-  The live link to the Github repository can be found here - https://github.com/Storkfrasse/Project2
+  The live link to the Heroku repository can be found here - https://dashboard.heroku.com/apps/pp3-shadows <br>
+  The live link to the GitHub repository can be found here - https://github.com/Storkfrasse/PP3
 
 ### **To fork the repository on GitHub**
 A copy of the GitHub Repository can be made by forking the GitHub account. This copy can be viewed and changes can be made to the copy without affecting the original repository. Take the following steps to fork the repository;
-1. Log in to **GitHub** and locate the [repository](https://github.com/Storkfrasse/Discgolf).
-2. On the right hand side of the page inline with the repository name is a button called **'Fork'**, click on the button to create a copy of the original repository in your GitHub Account.
-![GitHub forking process image](assets/readme-image/fork.jpg)
+1. Log in to **GitHub** and locate the [repository](https://github.com/Storkfrasse/PP3).
+2. On the right-hand side of the page in line with the repository name is a button called **'Fork'**, click on the button to create a copy of the original repository in your GitHub Account.
 
 ### **To create a local clone of this project**
-The method from cloning a project from GitHub is below:
+The method for cloning a project from GitHub is below:
 
 1. Under the repository’s name, click on the **code** tab.
 2. In the **Clone with HTTPS** section, click on the clipboard icon to copy the given URL.
-![Cloning image](assets/readme-image/clone.jpg)
 1. Go to [Codeanywhere](https://app.codeanywhere.com) Log in with GitHub
-2. Press the **+** New Workspace
-![Codeanywhere image](assets/readme-image/codes.jpg)   
+2. Press the **+** New Workspace 
 3. Paste the link.
 4. Press **enter** and the local clone will be created.
 
-
-
-[Back to top](<#contents>)
+[Back to top](#contents)
 
 # Credits
 ### Content
 
-* The font came from [Google Fonts](https://fonts.google.com/).
-* The icons came from [Font Awesome](https://fontawesome.com/).
-* The text in the home pages is from [Google](https://google.com).
-* Color scheme [Cssgradient.io](https://cssgradient.io).
+* For some of the code I used. [Python crash course](https://www.amazon.se/-/en/Eric-Matthes/dp/1593279280) (By Eric Matthes.)
+* The story for the program I used. [ChatGPT](https://chat.openai.com/)
 
-
-### Media
-* The Hero picture is form [pngtree](https://pngtree.com).
-* The image for rock, paper, scissors is from [Google picture search](https://google.com).
-* To compress picture is used [iloveimg](https://iloveimg.com)
-
-
-[Back to top](<#contents>)
+[Back to top](#contents)
 
 # Acknowledgements
-The site was completed as a Portfolio 2 Project piece for the Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such I would like to thank my mentor Rory Patrick Sheridan.
+The site was completed as a Portfolio 3 Project piece for the Full Stack Software Developer at the [Code Institute](https://codeinstitute.net/). As such, I would like to thank my mentor Rory Patrick Sheridan.
 
 Michael Sjö 2023.
 
-[Back to top](<#contents>)
+[Back to top](#contents)
