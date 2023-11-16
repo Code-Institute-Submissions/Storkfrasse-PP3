@@ -90,6 +90,17 @@ def display_rules():
     print("- Three wrong answers, and the ghost catches you!")
     
 
+def get_player_answer():
+    """
+    Get the player's answer (1 or 2) with input validation.
+    """
+    while True:
+        user_input = input("Your choice: ").strip().lower()
+        if user_input in ['1', '2']:
+            return int(user_input)
+        else:
+            print("Invalid input. Please enter 1 or 2.")
+
 
 def play_game(questions):
     score = 0
@@ -101,29 +112,19 @@ def play_game(questions):
         for i, option in enumerate(q["options"]):
             print(f"{i + 1}. {option}")
 
-        while True:
-            user_input = input("Your choice: ")
-            # Check if the input is not empty
-            if user_input.strip() and user_input.strip() in ['1', '2']:
-                break
-            else:
-                print("Invalid input. Please enter 1 or 2.")
+        user_input = get_player_answer()
 
         answer = q["answer"] + 1
-        if answer == int(user_input):
-            # Green color for correct answer
+        if answer == user_input:
             print(Fore.GREEN + "Correct answer!\n" + Style.RESET_ALL)
             score += 1
-            # Reset the wrong answer counter on a correct answer
             wrong_answer = 0
         else:
-            # Red color for wrong answer
             print(Fore.RED + "The ghost gets closer..\n" + Style.RESET_ALL)
             wrong_answer += 1
 
         if wrong_answer == 3:
             print(Fore.RED + "The Ghost caught you!.\n" + Style.RESET_ALL)
-            # Exit the function and the game
             return
 
     print(Fore.GREEN + "You got away!\n" + Style.RESET_ALL)
