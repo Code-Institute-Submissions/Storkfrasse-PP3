@@ -1,4 +1,5 @@
 from colorama import Fore, Style, init  # Colorama for color and style
+import random
 
 init(autoreset=True)
 
@@ -39,6 +40,56 @@ questions = [
     {
         "question": "What did you touch in the hidden chamber?",
         "options": ["A cold metal key", "Warm sunlight"],
+        "answer": 1
+    },
+    {
+        "question": "What do you find hidden under the dusty furniture?",
+        "options": ["An old photograph", "A hidden passage"],
+        "answer": 1
+    },
+    {
+        "question": "As you enter the kitchen, what do you hear behind you?",
+        "options": ["Footsteps", "Whispers"],
+        "answer": 0
+    },
+    {
+        "question": "In the dimly lit hallway, what catches your attention?",
+        "options": ["A flickering candle", "A mysterious painting"],
+        "answer": 1
+    },
+    {
+        "question": "What do you feel when you touch the cold doorknob?",
+        "options": ["A static shock", "A sudden chill"],
+        "answer": 0
+    },
+    {
+        "question": "What appears in the dusty mirror as you pass by?",
+        "options": ["A reflection of someone else", "A distorted face"],
+        "answer": 1
+    },
+    {
+        "question": "What do you see in the abandoned nursery?",
+        "options": ["Toys scattered on the floor", "A rocking chair moving"],
+        "answer": 1
+    },
+    {
+        "question": "What do you smell in the hidden cellar?",
+        "options": ["Musty dampness", "Freshly baked bread"],
+        "answer": 0
+    },
+    {
+        "question": "As you climb the creaky stairs, what do you hear above?",
+        "options": ["Giggling", "A distant piano melody"],
+        "answer": 1
+    },
+    {
+        "question": "What catches your eye in the dusty library?",
+        "options": ["A glowing book", "A pair of glowing eyes"],
+        "answer": 0
+    },
+    {
+        "question": "What do you feel when you step into the cold cellar?",
+        "options": ["A gust of wind", "A ghostly presence"],
         "answer": 1
     }
 ]
@@ -88,7 +139,7 @@ def display_rules():
     print("- Every choice affect the outcome.")
     print("- Get the correct answer to escape the paranormal.")
     print("- Three wrong answers, and the ghost catches you!")
-    
+
 
 def get_player_answer():
     """
@@ -102,11 +153,25 @@ def get_player_answer():
             print("Invalid input. Please enter 1 or 2.")
 
 
-def play_game(questions):
+def play_game(questions, difficulty):
+    random.shuffle(questions)
+    selected_questions = questions[:7]
     score = 0
     wrong_answer = 0
 
-    for q in questions:
+    if difficulty == 'easy':
+        # Allow more wrong answers
+        max_wrong_answers = 4
+    elif difficulty == 'medium':
+        max_wrong_answers = 3
+    elif difficulty == 'hard':
+        # Allow fewer wrong answers for higher difficulty
+        max_wrong_answers = 1
+    else:
+        print("Invalid difficulty level. Defaulting to medium.")
+        max_wrong_answers = 3
+
+    for q in selected_questions:
         print(q["question"])
 
         for i, option in enumerate(q["options"]):
@@ -123,36 +188,54 @@ def play_game(questions):
             print(Fore.RED + "The ghost gets closer..\n" + Style.RESET_ALL)
             wrong_answer += 1
 
-        if wrong_answer == 3:
+        if wrong_answer == max_wrong_answers:
             print(Fore.RED + "The Ghost caught you!.\n" + Style.RESET_ALL)
             return
 
     print(Fore.GREEN + "You got away!\n" + Style.RESET_ALL)
-    print(f"The game is over. Your score: {score}/{len(questions)}")
+    print(f"The game is over. Your score: {score}/{len(selected_questions)}")
 
 
 if __name__ == "__main__":
     """
-    Start of the game
+    Start the game.
     """
     def main():
         present_story()
 
-        while True:
-            print("1. Start Game")
-            print("2. Read Rules")
-            print("3. Quit")
+    while True:
+        print("1. Start Game")
+        print("2. Read Rules")
+        print("3. Difficulty Levels")
+        print("4. Quit")
 
-            choice = input("Enter your choice:")
+        choice = input("Enter your choice: ")
 
-            if choice == '1':
-                play_game(questions)
-            elif choice == '2':
-                display_rules()
-            elif choice == '3':
-                print("Thanks for playing my game. Goodbye!")
-                break
+        if choice == '1':
+            difficulty = input("Difficulty (easy, medium, hard): ").lower()
+            play_game(questions, difficulty)
+        elif choice == '2':
+            display_rules()
+        elif choice == '3':
+            print("Difficulty Levels:")
+            print("1. Easy")
+            print("2. Medium")
+            print("3. Hard")
+            difficulty_choice = input("Difficulty level (1, 2, 3): ").lower()
+            if difficulty_choice == '1':
+                difficulty = 'easy'
+            elif difficulty_choice == '2':
+                difficulty = 'medium'
+            elif difficulty_choice == '3':
+                difficulty = 'hard'
             else:
-                print("Invalid choice. Please enter 1, 2, or 3.")
+                print("Invalid choice. Defaulting to medium difficulty.")
+                difficulty = 'medium'
+            play_game(questions, difficulty)
+        elif choice == '4':
+            print("Thanks for playing my game. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter 1, 2, 3, or 4.")
 
     main()
