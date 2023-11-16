@@ -6,6 +6,7 @@ init(autoreset=True)
 """
 Questions in the game.
 """
+# Questions in the game.
 questions = [
     {
         "question": "What did you hear in the dark corner?",
@@ -134,9 +135,9 @@ def present_story():
 
 def display_rules():
     print("\nRules:")
-    print("- You find your self in a haunted mansion.")
+    print("- You find yourself in a haunted mansion.")
     print("- Make choices to navigate through the haunted rooms.")
-    print("- Every choice affect the outcome.")
+    print("- Every choice affects the outcome.")
     print("- Get the correct answer to escape the paranormal.")
     print("- Three wrong answers, and the ghost catches you!")
 
