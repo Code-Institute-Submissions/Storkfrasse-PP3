@@ -146,11 +146,14 @@ def get_player_answer():
     Get the player's answer (1 or 2) with input validation.
     """
     while True:
-        user_input = input("Your choice: ").strip().lower()
-        if user_input in ['1', '2']:
-            return int(user_input)
-        else:
-            print("Invalid input. Please enter 1 or 2.")
+        try:
+            user_input = input("Your choice: ").strip().lower()
+            if user_input in ['1', '2']:
+                return int(user_input)
+            else:
+                print("Invalid input. Please enter 1 or 2.")
+        except ValueError as e:
+            print(f"Error: {e}")
 
 
 def play_game(questions, difficulty):
@@ -201,41 +204,43 @@ if __name__ == "__main__":
     Start the game.
     """
     def main():
-        present_story()
+        try:
+            present_story()
 
-    while True:
-        print("1. Start Game")
-        print("2. Read Rules")
-        print("3. Difficulty Levels")
-        print("4. Quit")
+            while True:
+                print("1. Start Game")
+                print("2. Read Rules")
+                print("3. Difficulty Levels")
+                print("4. Quit")
 
-        choice = input("Enter your choice: ")
+                choice = input("Enter your choice: ")
 
-        if choice == '1':
-            difficulty = input("Difficulty (easy, medium, hard): ").lower()
-            play_game(questions, difficulty)
-        elif choice == '2':
-            display_rules()
-        elif choice == '3':
-            print("Difficulty Levels:")
-            print("1. Easy")
-            print("2. Medium")
-            print("3. Hard")
-            difficulty_choice = input("Difficulty level (1, 2, 3): ").lower()
-            if difficulty_choice == '1':
-                difficulty = 'easy'
-            elif difficulty_choice == '2':
-                difficulty = 'medium'
-            elif difficulty_choice == '3':
-                difficulty = 'hard'
-            else:
-                print("Invalid choice. Defaulting to medium difficulty.")
-                difficulty = 'medium'
-            play_game(questions, difficulty)
-        elif choice == '4':
-            print("Thanks for playing my game. Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please enter 1, 2, 3, or 4.")
+                if choice == '1':
+                    difficulty = input("(easy, medium, hard): ").lower()
+                    play_game(questions, difficulty)
+                elif choice == '2':
+                    display_rules()
+                elif choice == '3':
+                    print("Difficulty Levels:")
+                    print("1. Easy")
+                    print("2. Medium")
+                    print("3. Hard")
+                    difficulty_choice = input("Level (1, 2, 3): ").lower()
+                    if difficulty_choice == '1':
+                        difficulty = 'easy'
+                    elif difficulty_choice == '2':
+                        difficulty = 'medium'
+                    elif difficulty_choice == '3':
+                        difficulty = 'hard'
+                    else:
+                        raise ValueError("Invalid choice. Medium difficulty.")
+                    play_game(questions, difficulty)
+                elif choice == '4':
+                    print("Thanks for playing my game. Goodbye!")
+                    break
+                else:
+                    raise ValueError("Invalid choice. Enter 1, 2, 3, or 4.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
 
     main()
