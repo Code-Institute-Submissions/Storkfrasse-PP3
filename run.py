@@ -170,7 +170,7 @@ def play_game(questions, difficulty):
         max_wrong_answers = 3
     elif difficulty == 'hard':
         # Allow fewer wrong answers for higher difficulty
-        max_wrong_answers = 1
+        max_wrong_answers = 2
     else:
         print("Invalid difficulty level. Defaulting to medium.")
         max_wrong_answers = 3
