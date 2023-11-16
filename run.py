@@ -6,7 +6,6 @@ init(autoreset=True)
 """
 Questions in the game.
 """
-# Questions in the game.
 questions = [
     {
         "question": "What did you hear in the dark corner?",
@@ -139,7 +138,9 @@ def display_rules():
     print("- Make choices to navigate through the haunted rooms.")
     print("- Every choice affects the outcome.")
     print("- Get the correct answer to escape the paranormal.")
-    print("- Three wrong answers, and the ghost catches you!")
+    print("- Easy = Three wrong answers, and the ghost catches you!")
+    print("- Medium = Two wrong answers, and the ghost catches you!")
+    print("- Hard = One wrong answer, and the ghost catches you!")
 
 
 def get_player_answer():
@@ -209,19 +210,15 @@ if __name__ == "__main__":
             present_story()
 
             while True:
-                print("1. Start Game")
-                print("2. Read Rules")
-                print("3. Difficulty Levels")
-                print("4. Quit")
+                print("1. Read Rules")
+                print("2. Start Game")
+                print("3. Quit")
 
                 choice = input("Enter your choice: ")
 
                 if choice == '1':
-                    difficulty = input("(easy, medium, hard): ").lower()
-                    play_game(questions, difficulty)
-                elif choice == '2':
                     display_rules()
-                elif choice == '3':
+                elif choice == '2':
                     print("Difficulty Levels:")
                     print("1. Easy")
                     print("2. Medium")
@@ -236,11 +233,11 @@ if __name__ == "__main__":
                     else:
                         raise ValueError("Invalid choice. Medium difficulty.")
                     play_game(questions, difficulty)
-                elif choice == '4':
+                elif choice == '3':
                     print("Thanks for playing my game. Goodbye!")
                     break
                 else:
-                    raise ValueError("Invalid choice. Enter 1, 2, 3, or 4.")
+                    raise ValueError("Invalid choice. Enter 1, 2, or 3.")
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
 
