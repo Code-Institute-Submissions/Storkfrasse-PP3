@@ -12,7 +12,7 @@ Driven by an insatiable curiosity or a need to uncover family secrets, you enter
 Objective:<br>
 You must navigate the haunted mansion, making choices that will determine your fate. Each question presents a new challenge, a new encounter with the supernatural. The whispers guide you, but can they be trusted? Will you escape the clutches of the malevolent spirits, or will you become one with the shadows that linger in Ravenscroft Manor?
 
-Go and try you luck! Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_blank" rel="noopener">Whispers in the Shadows</a>
+Try you luck! Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_blank" rel="noopener">Whispers in the Shadows</a>
 
 # Contents
 
