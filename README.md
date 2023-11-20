@@ -24,7 +24,6 @@ Try you luck! Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com
   - [Site Structure](#site-structure)
   - [Design Choices](#design-choices)
 - [Features](#features)
-  - [Existing Features](#existing-features)
   - [Future Features](#future-features)
 - [Technologies Used](#technologies-used)
 - [Testing](#testing)
@@ -70,6 +69,7 @@ Whispers in the Shadows is a single working Python program.
 [Back to top](#contents)
 
 # Features
+![Navigation bar image](assets/readme-image/whispers.jpg)
 
 #### Story Introduction:
 * A captivating story introduction that sets the spooky and mysterious atmosphere of the game.
@@ -107,11 +107,6 @@ Whispers in the Shadows is a single working Python program.
 * A clean exit option when the player decides to quit the game.
 #### Error Handling:
 * Basic error handling to catch unexpected issues and inform the player.
-
-## Existing Features  
- *## Whisper in the Shadows.
-
-![Navigation bar image](assets/readme-image/whispers.jpg)
 
 [Back to top](#contents)
 
