@@ -199,55 +199,56 @@ def play_game(questions, difficulty):
 
         if wrong_answer == max_wrong_answers:
             print(Fore.RED + "The Ghost caught you!.\n" + Style.RESET_ALL)
+            time.sleep(3)  # Add a 3-sec delay
             return
 
     print(Fore.GREEN + "You got away!\n" + Style.RESET_ALL)
     print(f"The game is over. Your score: {score}/{len(selected_questions)}")
+    time.sleep(3)  # Add a 3-sec delay
 
 
 if __name__ == "__main__":
     """
     Start the game.
     """
-def main():
-    while True:
-        try:
-            present_story()
+    def main():
+        while True:
+            try:
+                present_story()
 
-            print("1. Read Rules")
-            print("2. Start Game")
-            print("3. Quit")
+                print("1. Read Rules")
+                print("2. Start Game")
+                print("3. Quit")
 
-            choice = input("Enter your choice: ")
+                choice = input("Enter your choice: ")
 
-            if choice == '1':
-                display_rules()
-            elif choice == '2':
-                print("Difficulty Levels:")
-                print("1. Easy")
-                print("2. Medium")
-                print("3. Hard")
-                time.sleep(0.5)  # Add a small delay before asking for difficulty choice
-                difficulty_choice = input("Level (1, 2, 3): ").lower()
-                
-                if difficulty_choice in ['1', '2', '3']:
-                    if difficulty_choice == '1':
-                        difficulty = 'easy'
-                    elif difficulty_choice == '2':
-                        difficulty = 'medium'
-                    elif difficulty_choice == '3':
-                        difficulty = 'hard'
+                if choice == '1':
+                    display_rules()
+                elif choice == '2':
+                    print("Difficulty Levels:")
+                    print("1. Easy")
+                    print("2. Medium")
+                    print("3. Hard")
+                    time.sleep(0.5)  # Add a small delay
+                    difficulty_choice = input("Level (1, 2, 3): ").lower()
+                    if difficulty_choice in ['1', '2', '3']:
+                        if difficulty_choice == '1':
+                            difficulty = 'easy'
+                        elif difficulty_choice == '2':
+                            difficulty = 'medium'
+                        elif difficulty_choice == '3':
+                            difficulty = 'hard'
 
-                    play_game(questions, difficulty)
+                        play_game(questions, difficulty)
+                    else:
+                        print("Invalid choice. Please enter 1, 2, or 3.")
+                        time.sleep(0.6)  # Add a delay
+                elif choice == '3':
+                    print("Thanks for playing my game. Goodbye!")
+                    break
                 else:
-                    print("Invalid difficulty choice. Please enter 1, 2, or 3.")
-                    time.sleep(0.6) # Add a delay
-            elif choice == '3':
-                print("Thanks for playing my game. Goodbye!")
-                break
-            else:
-                print("Invalid choice. Enter 1, 2, or 3.")
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+                    print("Invalid choice. Enter 1, 2, or 3.")
+            except Exception as e:
+                print(f"An unexpected error occurred: {e}")
 
 main()
