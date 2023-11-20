@@ -1,5 +1,6 @@
 from colorama import Fore, Style, init  # Colorama for color and style
 import random
+import time
 
 init(autoreset=True)
 
@@ -138,9 +139,12 @@ def display_rules():
     print("- Make choices to navigate through the haunted rooms.")
     print("- Every choice affects the outcome.")
     print("- Get the correct answer to escape the paranormal.")
-    print("- Easy = Three wrong answers, and the ghost catches you!")
-    print("- Medium = Two wrong answers, and the ghost catches you!")
-    print("- Hard = One wrong answer, and the ghost catches you!")
+    print("- Easy = Four wrong answers, and the ghost catches you!")
+    print("- Medium = Three wrong answers, and the ghost catches you!")
+    print("- Hard = Two wrong answer, and the ghost catches you!")
+    print("- If you get one right answer after a wrong one, the counter reset")
+
+    input("\nPress Enter to continue...")
 
 
 def get_player_answer():
@@ -205,40 +209,45 @@ if __name__ == "__main__":
     """
     Start the game.
     """
-    def main():
+def main():
+    while True:
         try:
             present_story()
 
-            while True:
-                print("1. Read Rules")
-                print("2. Start Game")
-                print("3. Quit")
+            print("1. Read Rules")
+            print("2. Start Game")
+            print("3. Quit")
 
-                choice = input("Enter your choice: ")
+            choice = input("Enter your choice: ")
 
-                if choice == '1':
-                    display_rules()
-                elif choice == '2':
-                    print("Difficulty Levels:")
-                    print("1. Easy")
-                    print("2. Medium")
-                    print("3. Hard")
-                    difficulty_choice = input("Level (1, 2, 3): ").lower()
+            if choice == '1':
+                display_rules()
+            elif choice == '2':
+                print("Difficulty Levels:")
+                print("1. Easy")
+                print("2. Medium")
+                print("3. Hard")
+                time.sleep(0.5)  # Add a small delay before asking for difficulty choice
+                difficulty_choice = input("Level (1, 2, 3): ").lower()
+                
+                if difficulty_choice in ['1', '2', '3']:
                     if difficulty_choice == '1':
                         difficulty = 'easy'
                     elif difficulty_choice == '2':
                         difficulty = 'medium'
                     elif difficulty_choice == '3':
                         difficulty = 'hard'
-                    else:
-                        raise ValueError("Invalid choice. Medium difficulty.")
+
                     play_game(questions, difficulty)
-                elif choice == '3':
-                    print("Thanks for playing my game. Goodbye!")
-                    break
                 else:
-                    raise ValueError("Invalid choice. Enter 1, 2, or 3.")
+                    print("Invalid difficulty choice. Please enter 1, 2, or 3.")
+                    time.sleep(0.6) # Add a delay
+            elif choice == '3':
+                print("Thanks for playing my game. Goodbye!")
+                break
+            else:
+                print("Invalid choice. Enter 1, 2, or 3.")
         except Exception as e:
             print(f"An unexpected error occurred: {e}")
 
-    main()
+main()
