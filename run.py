@@ -138,7 +138,7 @@ def display_rules():
     print("- You find yourself in a haunted mansion.")
     print("- Make choices to navigate through the haunted rooms.")
     print("- Every choice affects the outcome.")
-    print("- Get the correct answer to escape the paranormal.")
+    print("- Get the correct answer to escape the ghost.")
     print("- Easy = Four wrong answers, and the ghost catches you!")
     print("- Medium = Three wrong answers, and the ghost catches you!")
     print("- Hard = Two wrong answer, and the ghost catches you!")

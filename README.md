@@ -1,8 +1,18 @@
 # **Whispers in the Shadows**
 
-Whispers in the Shadows is a text-based adventure game in Python.
+Introduction:<br>
+You find yourself standing at the entrance of Ravenscroft Manor, an imposing mansion with a history steeped in mystery and darkness. The air is thick with an otherworldly fog, and the moonlight struggles to penetrate the dense canopy of ancient trees surrounding the estate. The only sound is a haunting whisper that seems to echo through the shadows.
 
-Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_blank" rel="noopener">Whispers in the Shadows</a>
+Background:<br>
+Ravenscroft Manor was once a grand residence, home to the enigmatic Ravenscroft family. However, a curse befell the family, and the once-majestic mansion became a place of despair and supernatural phenomena. Whispers of forbidden rituals and ghostly apparitions have haunted the halls for generations.
+
+Inciting Incident:<br>
+Driven by an insatiable curiosity or a need to uncover family secrets, you enter the mansion. As you explore, you discover an old tome hidden in the library containing an incantation that, once spoken, awakens the spirits that dwell within. The mansion transforms into a realm where the living and the dead coexist, and you are caught in the middle.
+
+Objective:<br>
+You must navigate the haunted mansion, making choices that will determine your fate. Each question presents a new challenge, a new encounter with the supernatural. The whispers guide you, but can they be trusted? Will you escape the clutches of the malevolent spirits, or will you become one with the shadows that linger in Ravenscroft Manor?
+
+Go and try you luck! Welcome to <a href="https://pp3-shadows-99906bed5dee.herokuapp.com/" target="_blank" rel="noopener">Whispers in the Shadows</a>
 
 # Contents
 
@@ -61,7 +71,42 @@ Whispers in the Shadows is a single working Python program.
 
 # Features
 
-The idea of this website is to show a different kind of game, a little of an old-school game.
+#### Story Introduction:
+* A captivating story introduction that sets the spooky and mysterious atmosphere of the game.
+#### Difficulty Levels:
+* Three difficulty levels (Easy, Medium, Hard) that influence the number of wrong answers allowed before the ghost catches the player.
+#### Question Types:
+* Multiple-choice questions with two options, providing players with choices that impact the game's outcome.
+#### User Input Handling:
+* input validation for user choices to ensure the game responds appropriately to player input.
+#### Scoring System:
+* A scoring system that tracks the player's correct answers, contributing to the final score.
+#### Ghost Catching Mechanic:
+* A mechanic where the ghost catches the player if a certain number of wrong answers is reached, based on the chosen difficulty level.
+#### Game Over Screen:
+* Display of a game-over screen when the ghost catches the player, concluding the game.
+#### Game Completion Screen:
+* Display of a completion screen when the player successfully answers all questions, indicating that they have escaped the paranormal.
+#### Colorama for Color and Style:
+* Usage of the Colorama library to add color and style to the text, enhancing the visual appeal of the game.
+#### Randomized Questions:
+* Questions are randomized, adding variety and replayability to each playthrough.
+#### Menu System:
+* A menu system that allows the player to read the rules, start the game, or quit.
+#### Rules Display:
+* Display of game rules that explain the objective, scoring, and consequences of wrong answers.
+#### User Interface Formatting:
+* Formatting enhancements using ASCII characters to create borders and visually separate different sections of the game.
+#### Difficulty Choice:
+* Player choice of difficulty level at the beginning of the game, influencing the overall challenge.
+#### Delay between Sections:
+* Small time delays between certain sections of the game for pacing.
+#### Main Game:
+* A main game loop that allows players to navigate through the story, make choices, and experience the consequences.
+#### Exit:
+* A clean exit option when the player decides to quit the game.
+#### Error Handling:
+* Basic error handling to catch unexpected issues and inform the player.
 
 ## Existing Features  
  *## Whisper in the Shadows.
@@ -119,17 +164,23 @@ Google Chrome, Microsoft Edge and Mozilla Firefox. Appearance and functionality 
 
 ## Known Bugs
 
-* During the build. I hade two bugs one where a loop was broken and what ever you answer was wrong.<br> The other was the lines in the story were to long:<br>
+* During the build. I hade three bugs one where a loop was broken and what ever you answer was wrong.<br> The other was the lines in the story were to long.<br> When you answer wrong the program broke.<br> 
     1.
     ![Broken Loop](assets/testing-image/loopbroke.jpg)<br>
     2.<br>
     ![Long lines](assets/testing-image/errors.jpg)
+    3.<br>
+    ![Broken While](assets/testing-image/Whilebroke.jpg)<br>
 
 * ### Resolved
 
   * Whit the broken loop i hade forgotten a letter, when i put it in all worked fine.
 
   * With the lines. I checked the spelling and sorted out so the line get over 79.
+
+  * I moved the try inside the While and change print insted of raise.<br>
+
+    ![While fixed](assets/testing-image/fixedwhile.jpg)
 
 
 ## Additional Testing
